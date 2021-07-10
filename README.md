@@ -9,6 +9,8 @@ Patika.dev SQL patikası Ödev 1,Ödev 2 ve Ödev 3 queryleri
 
 * [Ödev 4](#ödev-4)
 
+* [Ödev 5](#ödev-5)
+
 ## Ödev 1
 
 #### `film` tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
@@ -131,4 +133,33 @@ WHERE country LIKE '_____'
 SELECT COUNT(city)
 FROM city
 WHERE city LIKE 'R%r'
+```
+
+## Ödev 5
+
+#### film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en uzun (length) 5 filmi sıralayınız.
+```sql
+SELECT *
+FROM film
+WHERE title LIKE '%n'
+ORDER BY length DESC
+LIMIT 5
+```
+
+#### film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en kısa (length) ikinci 5 filmi sıralayınız.
+```sql
+SELECT *
+FROM film
+WHERE title LIKE '%n'
+ORDER BY length ASC
+LIMIT 5
+```
+
+#### customer tablosunda bulunan last_name sütununa göre azalan yapılan sıralamada store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız.
+```sql
+SELECT title,length
+FROM film
+WHERE title LIKE '%n'
+ORDER BY length DESC
+LIMIT 4
 ```
