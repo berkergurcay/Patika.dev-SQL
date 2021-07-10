@@ -13,6 +13,8 @@ Patika.dev SQL patikası Ödev 1,Ödev 2 ve Ödev 3 queryleri
 
 * [Ödev 6](#ödev-6)
 
+* [Ödev 7](#ödev-7)
+
 ## Ödev 1
 
 #### `film` tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
@@ -194,4 +196,37 @@ WHERE rental_rate = 0.99
 SELECT COUNT(DISTINCT replacement_cost)
 FROM film
 WHERE length > 150;
+```
+
+## Ödev 7
+
+#### film tablosunda bulunan filmleri rating değerlerine göre gruplayınız.
+```sql
+SELECT rating
+FROM film
+GROUP BY rating
+```
+
+#### film tablosunda bulunan filmleri replacement_cost sütununa göre grupladığımızda film sayısı 50 den fazla olan replacement_cost değerini ve karşılık gelen film sayısını sıralayınız.
+```sql
+SELECT replacement_cost, COUNT(*)
+FROM film
+GROUP BY replacement_cost
+HAVING COUNT(*) > 50;
+```
+
+#### customer tablosunda bulunan store_id değerlerine karşılık gelen müşteri sayılarını nelerdir?
+```sql
+SELECT store_id, COUNT(*)
+FROM customer
+GROUP BY store_id;
+```
+
+#### city tablosunda bulunan şehir verilerini country_id sütununa göre gruplandırdıktan sonra en fazla şehir sayısı barındıra country_id bilgisini ve şehir sayısını paylaşınız.
+```sql
+SELECT country_id,COUNT(*)
+FROM city
+GROUP BY country_id
+ORDER BY COUNT(*) DESC
+LIMIT 1;
 ```
