@@ -15,6 +15,8 @@ Patika.dev SQL patikası Ödev 1,Ödev 2 ve Ödev 3 queryleri
 
 * [Ödev 7](#ödev-7)
 
+* [Ödev 8](#ödev-8)
+
 ## Ödev 1
 
 #### `film` tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
@@ -229,4 +231,111 @@ FROM city
 GROUP BY country_id
 ORDER BY COUNT(*) DESC
 LIMIT 1;
+```
+
+## Ödev 8
+
+#### test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
+```sql
+CREATE TABLE employee (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(50),
+    birthday DATE,
+	email VARCHAR(50),
+);
+```
+
+#### Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
+```sql
+insert into MOCK_DATA (id, first_name, birthday, email) values (1, 'Ursuline', '2006-01-31', 'umozzetti0@tiny.cc');
+insert into MOCK_DATA (id, first_name, birthday, email) values (2, 'Wendi', '2016-08-21', 'wcaldecourt1@blogspot.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (3, 'Linea', '2020-11-17', 'lfarnhill2@pen.io');
+insert into MOCK_DATA (id, first_name, birthday, email) values (4, 'Sonnie', '2011-04-08', 'sangus3@etsy.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (5, 'Natalee', '2013-03-17', 'nlydall4@un.org');
+insert into MOCK_DATA (id, first_name, birthday, email) values (6, 'Royal', '2004-12-13', 'rdecullip5@seattletimes.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (7, 'Cordy', '2016-08-03', 'cdanson6@photobucket.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (8, 'Isa', '2014-08-02', 'imcneilly7@i2i.jp');
+insert into MOCK_DATA (id, first_name, birthday, email) values (9, 'Lotte', '2018-12-24', 'lkleinplatz8@mysql.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (10, 'Yancy', '2004-08-20', 'ymolineux9@yelp.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (11, 'Simmonds', '2004-11-12', 'spechea@liveinternet.ru');
+insert into MOCK_DATA (id, first_name, birthday, email) values (12, 'Kinnie', '2006-02-03', 'kfarndonb@paypal.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (13, 'Sonny', '2020-06-18', 'shavardc@mozilla.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (14, 'Sophey', '2004-09-11', 'segiloffd@quantcast.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (15, 'Irita', '2014-09-16', 'iblockeye@buzzfeed.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (16, 'Debbi', '2017-02-14', 'dboswardf@de.vu');
+insert into MOCK_DATA (id, first_name, birthday, email) values (17, 'Jodi', '2013-12-26', 'jtilteg@huffingtonpost.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (18, 'Hillard', '2017-04-27', 'hbraksperh@fotki.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (19, 'Tanny', '2007-04-14', 'tbaldoccii@chicagotribune.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (20, 'Franzen', '2012-05-29', 'fdeavesj@digg.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (21, 'Brice', '2019-02-27', 'bmellerk@canalblog.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (22, 'Bondon', '2009-10-27', 'bolekhovl@mapquest.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (23, 'Eleanore', '2016-12-10', 'edenyaginm@aol.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (24, 'Stephanie', '2015-09-10', 'sdeathn@xinhuanet.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (25, 'Doloritas', '2021-02-09', 'dstanfieldo@va.gov');
+insert into MOCK_DATA (id, first_name, birthday, email) values (26, 'Vince', '2020-01-27', 'vbrainep@boston.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (27, 'Laughton', '2011-07-10', 'lfeasbyq@sciencedaily.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (28, 'Cyb', '2017-05-03', 'crosenbaumr@ask.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (29, 'Rabi', '2012-02-01', 'rleybornes@hubpages.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (30, 'Ambur', '2005-09-01', 'aklauert@wp.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (31, 'Floyd', '2021-03-22', 'feykelhofu@illinois.edu');
+insert into MOCK_DATA (id, first_name, birthday, email) values (32, 'Ursa', '2012-02-12', 'uubsdalev@jiathis.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (33, 'Vivyanne', '2019-12-14', 'vclackw@fc2.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (34, 'Caesar', '2005-06-13', 'cwurzx@ifeng.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (35, 'Angelle', '2009-06-18', 'aboshersy@mayoclinic.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (36, 'Teriann', '2020-12-12', 'tnealandz@amazon.co.uk');
+insert into MOCK_DATA (id, first_name, birthday, email) values (37, 'Ardyce', '2021-05-12', 'aradden10@dot.gov');
+insert into MOCK_DATA (id, first_name, birthday, email) values (38, 'Robina', '2017-07-07', 'rmccrie11@vkontakte.ru');
+insert into MOCK_DATA (id, first_name, birthday, email) values (39, 'Beniamino', '2011-08-11', 'bodonohue12@hud.gov');
+insert into MOCK_DATA (id, first_name, birthday, email) values (40, 'Millard', '2011-04-20', 'mkinnett13@rediff.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (41, 'Kylie', '2016-04-27', 'kcreak14@slashdot.org');
+insert into MOCK_DATA (id, first_name, birthday, email) values (42, 'Birch', '2006-03-25', 'bdickman15@sciencedirect.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (43, 'Hope', '2015-08-15', 'hshacklady16@imageshack.us');
+insert into MOCK_DATA (id, first_name, birthday, email) values (44, 'Judas', '2011-01-25', 'jmcilhone17@zimbio.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (45, 'Umeko', '2013-03-22', 'utroucher18@amazonaws.com');
+insert into MOCK_DATA (id, first_name, birthday, email) values (46, 'Chickie', '2015-03-14', 'chighton19@epa.gov');
+insert into MOCK_DATA (id, first_name, birthday, email) values (47, 'Selene', '2019-09-21', 'svines1a@upenn.edu');
+insert into MOCK_DATA (id, first_name, birthday, email) values (48, 'Aurelia', '2018-04-17', 'alingwood1b@pagesperso-orange.fr');
+insert into MOCK_DATA (id, first_name, birthday, email) values (49, 'Rozina', '2007-08-02', 'rposselow1c@uiuc.edu');
+insert into MOCK_DATA (id, first_name, birthday, email) values (50, 'Tully', '2003-01-30', 'tbramsom1d@list-manage.com');
+```
+
+#### Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+```sql
+UPDATE employee
+SET name = 'Update_t'
+WHERE name LIKE 'T%';
+
+UPDATE employee
+SET email = 'Update_email_last'
+WHERE name LIKE '%com';
+
+UPDATE employee
+SET name = '30th Index'
+WHERE id = 30;
+
+UPDATE employee
+SET email = 'Update_email'
+WHERE email LIKE 'a%';
+
+UPDATE employee
+SET name = 'Update_id'
+WHERE id > 30;
+```
+
+#### Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
+```sql
+DELETE FROM employee
+WHERE name LIKE 'T%';
+
+DELETE FROM employee
+WHERE name LIKE '%com';
+
+DELETE FROM employee
+WHERE id = 30;
+
+DELETE FROM employee
+WHERE email LIKE 'a%';
+
+DELETE FROM employee
+WHERE id > 30;
 ```
