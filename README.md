@@ -23,6 +23,8 @@ Patika.dev SQL patikası Ödev 1,Ödev 2 ve Ödev 3 queryleri
 
 * [Ödev 11](#ödev-11)
 
+* [Ödev 12](#ödev-12)
+
 ## Ödev 1
 
 #### `film` tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
@@ -451,5 +453,39 @@ FROM actor
 EXCEPT ALL
 (SELECT first_name
 FROM customer);
+```
 
+## Ödev 12
+
+#### film tablosunda film uzunluğu length sütununda gösterilmektedir. Uzunluğu ortalama film uzunluğundan fazla kaç tane film vardır?
+```sql
+SELECT COUNT(*)
+FROM film
+WHERE length > (SELECT AVG(length)
+			   FROM film)
+```
+
+#### film tablosunda en yüksek rental_rate değerine sahip kaç tane film vardır?
+```sql
+SELECT COUNT(*)
+FROM film
+WHERE rental_rate = (SELECT MAX(rental_rate)
+					FROM film)
+```
+
+#### film tablosunda en düşük rental_rate ve en düşün replacement_cost değerlerine sahip filmleri sıralayınız.
+```sql
+SELECT title,rental_rate,replacement_cost
+FROM film
+WHERE (rental_rate = (SELECT MIN(rental_rate) FROM film)) AND (replacement_cost = (SELECT MIN(replacement_cost) FROM film))
+```
+
+#### payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
+```sql
+SELECT first_name,last_name, SUM(amount)
+FROM customer
+JOIN payment
+ON customer.customer_id = payment.customer_id
+GROUP BY first_name,last_name
+ORDER BY SUM(amount) DESC
 ```
